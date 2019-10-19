@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :air_quality_parameters
   resources :air_quality_parameter_units
   resources :data_sets
   resources :data_set_sources

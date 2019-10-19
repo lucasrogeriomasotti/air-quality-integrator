@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Air Quality Parameters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Air quality parameter unit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @air_quality_parameters.each do |air_quality_parameter| %>
+      <tr>
+        <td><%= air_quality_parameter.name %></td>
+        <td><%= air_quality_parameter.description %></td>
+        <td><%= air_quality_parameter.air_quality_parameter_unit_id %></td>
+        <td><%= link_to 'Show', air_quality_parameter %></td>
+        <td><%= link_to 'Edit', edit_air_quality_parameter_path(air_quality_parameter) %></td>
+        <td><%= link_to 'Destroy', air_quality_parameter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Air Quality Parameter', new_air_quality_parameter_path %>

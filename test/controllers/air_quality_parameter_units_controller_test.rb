@@ -3,6 +3,7 @@ require 'test_helper'
 class AirQualityParameterUnitsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @air_quality_parameter_unit = air_quality_parameter_units(:one)
+    @air_quality_parameter_unit_without_associated_records = air_quality_parameter_units(:two)
   end
 
   test "should get index" do
@@ -40,7 +41,7 @@ class AirQualityParameterUnitsControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy air_quality_parameter_unit" do
     assert_difference('AirQualityParameterUnit.count', -1) do
-      delete air_quality_parameter_unit_url(@air_quality_parameter_unit)
+      delete air_quality_parameter_unit_url(@air_quality_parameter_unit_without_associated_records)
     end
 
     assert_redirected_to air_quality_parameter_units_url

@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_203147) do
+ActiveRecord::Schema.define(version: 2019_10_19_203643) do
 
   create_table "air_quality_parameter_units", force: :cascade do |t|
     t.string "name"
     t.string "symbol"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "air_quality_parameters", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "air_quality_parameter_unit_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["air_quality_parameter_unit_id"], name: "index_air_quality_parameters_on_air_quality_parameter_unit_id"
   end
 
   create_table "data_set_sources", force: :cascade do |t|
@@ -36,5 +45,6 @@ ActiveRecord::Schema.define(version: 2019_10_19_203147) do
     t.index ["data_set_source_id"], name: "index_data_sets_on_data_set_source_id"
   end
 
+  add_foreign_key "air_quality_parameters", "air_quality_parameter_units"
   add_foreign_key "data_sets", "data_set_sources"
 end
