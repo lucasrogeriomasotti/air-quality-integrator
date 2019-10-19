@@ -6,12 +6,12 @@ Integrate NASA data, ground-based air quality data, and citizen science data to 
 
 ## Data
 ### Parameters
-* Ozone (ppm)
-* PM 10 (µg/m³): Particulate matter less than 10 micrometers in diameter
 * PM 2.5 (µg/m³): Particulate matter less than 2.5 micrometers in diameter
+* PM 10 (µg/m³): Particulate matter less than 10 micrometers in diameter
+* Ozone (ppm)
 * Sulfur Dioxide SO2 (ppm)
 
-
+### Recommended Values
 
 ## Inspirations
 * [Open AQ Platform API](https://openaq.org)
