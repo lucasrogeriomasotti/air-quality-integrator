@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @air_quality_parameter_unit.name %>
+</p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @air_quality_parameter_unit.symbol %>
+</p>
+
+<%= link_to 'Edit', edit_air_quality_parameter_unit_path(@air_quality_parameter_unit) %> |
+<%= link_to 'Back', air_quality_parameter_units_path %>

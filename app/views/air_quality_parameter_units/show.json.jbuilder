@@ -1,0 +1,1 @@
+json.partial! "air_quality_parameter_units/air_quality_parameter_unit", air_quality_parameter_unit: @air_quality_parameter_unit

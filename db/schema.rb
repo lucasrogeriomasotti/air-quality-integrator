@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_195050) do
+ActiveRecord::Schema.define(version: 2019_10_19_203147) do
+
+  create_table "air_quality_parameter_units", force: :cascade do |t|
+    t.string "name"
+    t.string "symbol"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "data_set_sources", force: :cascade do |t|
     t.string "name"
