@@ -17,7 +17,7 @@ class DataSetSourcesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create data_set_source" do
     assert_difference('DataSetSource.count') do
-      post data_set_sources_url, params: { data_set_source: { confidence_level: @data_set_source.confidence_level, name: @data_set_source.name } }
+      post data_set_sources_url, params: { data_set_source: { confidence_level: @data_set_source.confidence_level, name: SecureRandom.hex } }
     end
 
     assert_redirected_to data_set_source_url(DataSetSource.last)

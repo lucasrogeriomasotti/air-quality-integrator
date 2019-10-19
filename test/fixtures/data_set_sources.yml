@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Name - <%= SecureRandom.hex %>
   confidence_level: 9.99
 
 two:
-  name: MyString
+  name: Name - <%= SecureRandom.hex %>
   confidence_level: 9.99

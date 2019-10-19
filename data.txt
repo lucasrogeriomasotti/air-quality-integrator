@@ -4,12 +4,7 @@ Fontes de dados:
 Reference Ground Monitor Data
 	OpenAQ
 AirQualitySystem.zip
-	
 
-
-DataSetSources
-	name:string
-	confidence_level:integer
 
 DataSets
 	name:string
