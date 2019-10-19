@@ -11,7 +11,17 @@ Integrate NASA data, ground-based air quality data, and citizen science data to 
 * Ozone (ppm)
 * Sulfur Dioxide SO2 (ppm)
 
-### Recommended Values
+## TODO
+* Import data
+	* Air Quality System (AQS) - Los Angeles
+	* Meteorological Data (MERRA2)
+	* Reference Ground Monitor Data (OpenAQ)
+* Evaluate data quality across differente sources
+	* Weighted average based on user provided confidence level
+	* Number of available measurements for the requested location
+	* Compare data sets and check the difference between them, to find anomalies
+	* Measure of data set reliability, based on the inverse of deviation (variability measure) as weight for the weighted average
+* Store guideline values from different organizations and correlate them with the measures on the system
 
 ## Inspirations
 * [Open AQ Platform API](https://openaq.org)

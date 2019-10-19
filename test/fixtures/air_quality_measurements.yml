@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_set: one
+  measurement_datetime: 2019-10-19 18:02:29
+  air_quality_parameter: one
+  value: 9.99
+  location: MyString
+  city: MyString
+  country: MyString
+  coordinates: MyString
+  radius: 1
+
+two:
+  data_set: one
+  measurement_datetime: 2019-10-19 18:02:29
+  air_quality_parameter: one
+  value: 9.99
+  location: MyString
+  city: MyString
+  country: MyString
+  coordinates: MyString
+  radius: 1

@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_203643) do
+ActiveRecord::Schema.define(version: 2019_10_19_210229) do
+
+  create_table "air_quality_measurements", force: :cascade do |t|
+    t.integer "data_set_id", null: false
+    t.datetime "measurement_datetime"
+    t.integer "air_quality_parameter_id", null: false
+    t.decimal "value"
+    t.string "location"
+    t.string "city"
+    t.string "country"
+    t.string "coordinates"
+    t.integer "radius"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["air_quality_parameter_id"], name: "index_air_quality_measurements_on_air_quality_parameter_id"
+    t.index ["data_set_id"], name: "index_air_quality_measurements_on_data_set_id"
+  end
 
   create_table "air_quality_parameter_units", force: :cascade do |t|
     t.string "name"
@@ -45,6 +61,8 @@ ActiveRecord::Schema.define(version: 2019_10_19_203643) do
     t.index ["data_set_source_id"], name: "index_data_sets_on_data_set_source_id"
   end
 
+  add_foreign_key "air_quality_measurements", "air_quality_parameters"
+  add_foreign_key "air_quality_measurements", "data_sets"
   add_foreign_key "air_quality_parameters", "air_quality_parameter_units"
   add_foreign_key "data_sets", "data_set_sources"
 end

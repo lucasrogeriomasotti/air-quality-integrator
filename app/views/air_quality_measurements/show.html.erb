@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data set:</strong>
+  <%= @air_quality_measurement.data_set_id %>
+</p>
+
+<p>
+  <strong>Measurement datetime:</strong>
+  <%= @air_quality_measurement.measurement_datetime %>
+</p>
+
+<p>
+  <strong>Air quality parameter:</strong>
+  <%= @air_quality_measurement.air_quality_parameter_id %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @air_quality_measurement.value %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @air_quality_measurement.location %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @air_quality_measurement.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @air_quality_measurement.country %>
+</p>
+
+<p>
+  <strong>Coordinates:</strong>
+  <%= @air_quality_measurement.coordinates %>
+</p>
+
+<p>
+  <strong>Radius:</strong>
+  <%= @air_quality_measurement.radius %>
+</p>
+
+<%= link_to 'Edit', edit_air_quality_measurement_path(@air_quality_measurement) %> |
+<%= link_to 'Back', air_quality_measurements_path %>
