@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_192517) do
+ActiveRecord::Schema.define(version: 2019_10_19_195050) do
 
   create_table "data_set_sources", force: :cascade do |t|
     t.string "name"
@@ -19,4 +19,15 @@ ActiveRecord::Schema.define(version: 2019_10_19_192517) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "data_sets", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "data_set_source_id", null: false
+    t.decimal "confidence_level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["data_set_source_id"], name: "index_data_sets_on_data_set_source_id"
+  end
+
+  add_foreign_key "data_sets", "data_set_sources"
 end

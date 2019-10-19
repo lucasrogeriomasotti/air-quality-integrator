@@ -3,6 +3,7 @@ require 'test_helper'
 class DataSetSourcesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @data_set_source = data_set_sources(:one)
+    @data_set_source_without_associated_records = data_set_sources(:two)
   end
 
   test "should get index" do
@@ -40,7 +41,7 @@ class DataSetSourcesControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy data_set_source" do
     assert_difference('DataSetSource.count', -1) do
-      delete data_set_source_url(@data_set_source)
+      delete data_set_source_url(@data_set_source_without_associated_records)
     end
 
     assert_redirected_to data_set_sources_url
