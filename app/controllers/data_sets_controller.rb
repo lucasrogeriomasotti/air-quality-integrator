@@ -1,5 +1,7 @@
+require 'csv'
+
 class DataSetsController < ApplicationController
-  before_action :set_data_set, only: [:show, :edit, :update, :destroy]
+  before_action :set_data_set, only: [:show, :edit, :update, :destroy, :upload_csv, :select_csv_fields, :create_records_from_csv_file]
 
   # GET /data_sets
   # GET /data_sets.json
@@ -59,6 +61,19 @@ class DataSetsController < ApplicationController
       format.html { redirect_to data_sets_url, notice: 'Data set was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upload_csv
+  end
+
+  def create_records_from_csv_file
+    #TODO
+    # measurements = []
+    # CSV.foreach(params[:csv][:file], headers: true) do |row|
+    #   byebug
+    #   measurements << row.to_h
+    # end
+    # AirQualityMeasurement.import(items)
   end
 
   private

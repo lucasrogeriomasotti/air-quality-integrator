@@ -1,0 +1,4 @@
+<%= simple_form_for :csv, method: :post, url: create_records_from_csv_path(@data_set) do |f| %>
+  <%= f.file_field :file %>
+  <%= f.submit 'Upload' %>
+<% end %>

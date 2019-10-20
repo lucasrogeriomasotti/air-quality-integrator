@@ -13,9 +13,10 @@ Integrate NASA data, ground-based air quality data, and citizen science data to 
 
 ## TODO
 * Import data
-	* Air Quality System (AQS) - Los Angeles
+	* API - Air Quality Programmatic APIs (aqicn.org)
 	* Meteorological Data (MERRA2)
 	* Reference Ground Monitor Data (OpenAQ)
+	* Air Quality System (AQS) - Los Angeles
 * Evaluate data quality across differente sources
 	* Weighted average based on user provided confidence level
 	* Number of available measurements for the requested location
