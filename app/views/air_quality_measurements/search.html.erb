@@ -16,7 +16,40 @@ Mean: <%= @measurements.pluck(:value).mean %>
 
 <br />
 <br />
+
+<div id="map" style="height: 400px; width: 600px;"></div>
+<br />
+
 <% @measurements.each do |measurement| %>
   <%= measurement %>
   <br />
 <% end %>
+<script>
+  var map, heatmap;
+
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: {lat: <%= @measurements.pluck(:latitude).median %>, lng: <%= @measurements.pluck(:longitude).median %> },
+      mapTypeId: 'satellite'
+    });
+
+    heatmap = new google.maps.visualization.HeatmapLayer({
+      data: getPoints(),
+      radius: 1,
+      dissipating: false,
+      map: map
+    });
+  }
+
+  // Heatmap data: 500 Points
+  function getPoints() {
+    return [
+    <% @measurements.each do |measurement| %>
+      {location: new google.maps.LatLng(<%= measurement.latitude %>, <%= measurement.longitude %>), weight: <%= @measurements.pluck(:value).median %>},
+    <% end %>
+    ];
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnA3jiwsBI_EnSzbID72nTgD3qqKWxb4I&libraries=visualization&callback=initMap">
+</script>
