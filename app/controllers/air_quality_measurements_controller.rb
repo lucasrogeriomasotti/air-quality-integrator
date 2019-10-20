@@ -61,6 +61,11 @@ class AirQualityMeasurementsController < ApplicationController
     end
   end
 
+  def search
+      @q = AirQualityMeasurement.ransack(params[:q])
+      @measurements = @q.result(distinct: true)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_air_quality_measurement

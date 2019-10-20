@@ -59,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'simple_form'
 gem 'country_select', '~> 4.0'
 gem 'activerecord-import'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'simple_stats'

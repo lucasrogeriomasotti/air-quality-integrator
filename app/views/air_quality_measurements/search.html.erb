@@ -1,0 +1,22 @@
+<%= search_form_for @q, url: air_quality_measurements_search_path do |f| %>
+
+  <%= f.label :city_cont %>
+  <%= f.search_field :city_cont %>
+
+  <%= f.search_field :air_quality_parameter_name_eq %>
+  <%= f.submit %>
+<% end %>
+<br />
+
+<%= @measurements.count %> measurements found for your query.
+<br />
+Median: <%= @measurements.pluck(:value).median %>
+<br />
+Mean: <%= @measurements.pluck(:value).mean %>
+
+<br />
+<br />
+<% @measurements.each do |measurement| %>
+  <%= measurement %>
+  <br />
+<% end %>
