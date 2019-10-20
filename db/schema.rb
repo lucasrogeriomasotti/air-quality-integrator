@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_210229) do
+ActiveRecord::Schema.define(version: 2019_10_20_143627) do
 
   create_table "air_quality_measurements", force: :cascade do |t|
     t.integer "data_set_id", null: false
@@ -20,10 +20,11 @@ ActiveRecord::Schema.define(version: 2019_10_19_210229) do
     t.string "location"
     t.string "city"
     t.string "country"
-    t.string "coordinates"
     t.integer "radius"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.index ["air_quality_parameter_id"], name: "index_air_quality_measurements_on_air_quality_parameter_id"
     t.index ["data_set_id"], name: "index_air_quality_measurements_on_data_set_id"
   end

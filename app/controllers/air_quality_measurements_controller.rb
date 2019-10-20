@@ -69,6 +69,6 @@ class AirQualityMeasurementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def air_quality_measurement_params
-      params.require(:air_quality_measurement).permit(:data_set_id, :measurement_datetime, :air_quality_parameter_id, :value, :location, :city, :country, :coordinates, :radius)
+      params.require(:air_quality_measurement).permit(:data_set_id, :measurement_datetime, :air_quality_parameter_id, :value, :location, :city, :country, :latitude, :longitude, :radius)
     end
 end

@@ -17,7 +17,7 @@ class AirQualityMeasurementsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create air_quality_measurement" do
     assert_difference('AirQualityMeasurement.count') do
-      post air_quality_measurements_url, params: { air_quality_measurement: { air_quality_parameter_id: @air_quality_measurement.air_quality_parameter_id, city: @air_quality_measurement.city, coordinates: @air_quality_measurement.coordinates, country: @air_quality_measurement.country, data_set_id: @air_quality_measurement.data_set_id, location: @air_quality_measurement.location, measurement_datetime: @air_quality_measurement.measurement_datetime, radius: @air_quality_measurement.radius, value: @air_quality_measurement.value } }
+      post air_quality_measurements_url, params: { air_quality_measurement: { air_quality_parameter_id: @air_quality_measurement.air_quality_parameter_id, city: @air_quality_measurement.city, latitude: @air_quality_measurement.latitude, longitude: @air_quality_measurement.longitude, country: @air_quality_measurement.country, data_set_id: @air_quality_measurement.data_set_id, location: @air_quality_measurement.location, measurement_datetime: @air_quality_measurement.measurement_datetime, radius: @air_quality_measurement.radius, value: @air_quality_measurement.value } }
     end
 
     assert_redirected_to air_quality_measurement_url(AirQualityMeasurement.last)
@@ -34,7 +34,7 @@ class AirQualityMeasurementsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update air_quality_measurement" do
-    patch air_quality_measurement_url(@air_quality_measurement), params: { air_quality_measurement: { air_quality_parameter_id: @air_quality_measurement.air_quality_parameter_id, city: @air_quality_measurement.city, coordinates: @air_quality_measurement.coordinates, country: @air_quality_measurement.country, data_set_id: @air_quality_measurement.data_set_id, location: @air_quality_measurement.location, measurement_datetime: @air_quality_measurement.measurement_datetime, radius: @air_quality_measurement.radius, value: @air_quality_measurement.value } }
+    patch air_quality_measurement_url(@air_quality_measurement), params: { air_quality_measurement: { air_quality_parameter_id: @air_quality_measurement.air_quality_parameter_id, city: @air_quality_measurement.city, latitude: @air_quality_measurement.latitude, longitude: @air_quality_measurement.longitude, country: @air_quality_measurement.country, data_set_id: @air_quality_measurement.data_set_id, location: @air_quality_measurement.location, measurement_datetime: @air_quality_measurement.measurement_datetime, radius: @air_quality_measurement.radius, value: @air_quality_measurement.value } }
     assert_redirected_to air_quality_measurement_url(@air_quality_measurement)
   end
 
