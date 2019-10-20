@@ -25,6 +25,7 @@ Some parameters that are important for air quality
 ## TODO
 * Improve statistical analyis of the data
 * Import data as CSV
+* Find better ways to display the data. The current approach, Google Maps Heatmap, is not the best to display the data
 * Dynamic data sources (from APIs)
 	* API - Air Quality Programmatic APIs (aqicn.org)
 	* Reference Ground Monitor Data (OpenAQ)
