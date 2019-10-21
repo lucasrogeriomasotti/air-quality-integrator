@@ -36,7 +36,7 @@ Mean: <%= @measurements.pluck(:value).mean %>
 
     heatmap = new google.maps.visualization.HeatmapLayer({
       data: getPoints(),
-      radius: 1,
+      radius: 4,
       dissipating: false,
       map: map
     });
@@ -51,5 +51,5 @@ Mean: <%= @measurements.pluck(:value).mean %>
     ];
   }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnA3jiwsBI_EnSzbID72nTgD3qqKWxb4I&libraries=visualization&callback=initMap">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_maps_api_key %>&libraries=visualization&callback=initMap">
 </script>
